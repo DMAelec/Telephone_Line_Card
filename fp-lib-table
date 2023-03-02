@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name Teltone_M949_Line_Sense_Relay)(type KiCad)(uri ${KIPRJMOD}/lib/Teltone_M949_Line_Sense_Relay.pretty)(options "")(descr ""))
+  (lib (name Transformer_Bourns_LM-NP-100x_Signal_Transformers)(type KiCad)(uri ${KIPRJMOD}/lib/Transformer_Bourns_LM-NP-100x_Signal_Transformers.pretty)(options "")(descr ""))
+)
