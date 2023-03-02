@@ -147,17 +147,6 @@ $EndComp
 Text Notes 2500 11050 0    50   ~ 0
 RINGING GENERATOR:\nPOWER DSINE PCR-SIN03V12F20-C\nOR\nCAMBRIDGE LABS BLACK MAGIC 
 $Comp
-L Relay:G5V-2 K1
-U 1 1 6219A4EB
-P 6290 5970
-F 0 "K1" V 7060 5970 50  0000 C CNN
-F 1 "G5V-2" V 6967 5970 50  0000 C CNN
-F 2 "Relay_THT:Relay_DPDT_Omron_G5V-2" H 6940 5920 50  0001 L CNN
-F 3 "http://omronfs.omron.com/en_US/ecb/products/pdf/en-g5v_2.pdf" H 6090 5970 50  0001 C CNN
-	1    6290 5970
-	0    -1   -1   0   
-$EndComp
-$Comp
 L Device:C C?
 U 1 1 622CC583
 P 9280 5970
@@ -168,8 +157,6 @@ F 3 "~" H 9280 5970 50  0001 C CNN
 	1    9280 5970
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2030 4140 2160 4140
 Wire Wire Line
 	2030 4240 2160 4240
 Wire Wire Line
@@ -187,8 +174,6 @@ F 3 "" H 12590 7910 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2160 5340 2030 5340
-Text Notes 6000 5090 0    50   ~ 0
-VOICE LINE RELAY
 Text Notes 12720 5050 0    50   ~ 0
 TALK/RING RELAY
 $Comp
@@ -243,7 +228,7 @@ F 3 "~" H 12280 5770 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 12700 5370 0    50   Input ~ 0
-RING_BUS_T
+RING_BUS(T)
 Wire Wire Line
 	13940 7130 13390 7130
 Connection ~ 13390 7130
@@ -385,7 +370,7 @@ $EndComp
 Wire Wire Line
 	10610 2790 10610 2740
 Text GLabel 11600 2740 2    50   Input ~ 0
-RING_TRIP
+RT
 $Comp
 L Device:R_US R?
 U 1 1 64236C8D
@@ -479,115 +464,14 @@ Text Notes 11630 4290 0    50   ~ 0
 RING TRIP CIRCUIT\nSEE "TRIX V2" FIG 19 FOR MORE DETAILS
 Text Notes 8390 8330 0    50   ~ 0
 TALK BATTERY CURRENT SUPPLY\nRESISTOR VALUES\n24V: 300-400 OHM\n48V: 600-700 OHM
-Wire Wire Line
-	6680 7920 6680 7730
-Wire Wire Line
-	6380 7530 6280 7530
-$Comp
-L power:GND #PWR?
-U 1 1 6428D628
-P 6680 7920
-F 0 "#PWR?" H 6680 7670 50  0001 C CNN
-F 1 "GND" H 6685 7744 50  0000 C CNN
-F 2 "" H 6680 7920 50  0001 C CNN
-F 3 "" H 6680 7920 50  0001 C CNN
-	1    6680 7920
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_BJT:2N3904 Q?
-U 1 1 6428D62E
-P 6580 7530
-F 0 "Q?" H 6770 7577 50  0000 L CNN
-F 1 "2N3904" H 6770 7484 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 6780 7455 50  0001 L CIN
-F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3904.pdf" H 6580 7530 50  0001 L CNN
-	1    6580 7530
-	1    0    0    -1  
-$EndComp
-Text GLabel 5760 7530 0    50   Input ~ 0
-LS
-$Comp
-L power:GND #PWR?
-U 1 1 6428D635
-P 5880 8010
-F 0 "#PWR?" H 5880 7760 50  0001 C CNN
-F 1 "GND" H 5885 7834 50  0000 C CNN
-F 2 "" H 5880 8010 50  0001 C CNN
-F 3 "" H 5880 8010 50  0001 C CNN
-	1    5880 8010
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	5880 7710 5880 7530
-Connection ~ 5880 7530
-Wire Wire Line
-	5880 7530 5760 7530
-$Comp
-L Device:R_US R?
-U 1 1 6428D645
-P 5880 7860
-F 0 "R?" H 5948 7906 50  0000 L CNN
-F 1 "10K" H 5948 7815 50  0000 L CNN
-F 2 "" V 5920 7850 50  0001 C CNN
-F 3 "~" H 5880 7860 50  0001 C CNN
-	1    5880 7860
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_US R?
-U 1 1 6428D64B
-P 6130 7530
-F 0 "R?" V 6335 7530 50  0000 C CNN
-F 1 "1K" V 6244 7530 50  0000 C CNN
-F 2 "" V 6170 7520 50  0001 C CNN
-F 3 "~" H 6130 7530 50  0001 C CNN
-	1    6130 7530
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	5880 7530 5980 7530
-$Comp
-L Diode:1N4148 D?
-U 1 1 64295C4F
-P 6270 6870
-F 0 "D?" H 6270 7086 50  0000 C CNN
-F 1 "1N4148" H 6270 6995 50  0000 C CNN
-F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 6270 6695 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 6270 6870 50  0001 C CNN
-	1    6270 6870
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6420 6870 6680 6870
-Wire Wire Line
-	6680 6370 6680 6870
-Wire Wire Line
-	6590 6370 6680 6370
-Wire Wire Line
-	6680 6870 6680 7330
 Connection ~ 13390 6770
 Connection ~ 12500 6520
 Wire Wire Line
 	12500 6520 12500 6770
-Connection ~ 6680 6870
-Wire Wire Line
-	5790 6620 5710 6620
-Wire Wire Line
-	5990 6370 5790 6370
-Wire Wire Line
-	5790 6370 5790 6620
-Wire Wire Line
-	6120 6870 5790 6870
-Connection ~ 5790 6620
-Wire Wire Line
-	5790 6620 5790 6870
 Wire Wire Line
 	10710 2740 10710 2790
 Wire Wire Line
 	2030 4040 2160 4040
-Text GLabel 2160 5340 2    50   Input ~ 0
-RING_BUS_T
 Text GLabel 11830 7510 2    50   Input ~ 0
 SHK
 $Comp
@@ -601,10 +485,8 @@ F 3 "" H 2160 4540 50  0001 C CNN
 	1    2160 4540
 	0    -1   -1   0   
 $EndComp
-Text GLabel 2160 4140 2    50   Input ~ 0
-LS
 Text GLabel 2160 4440 2    50   Input ~ 0
-RING_TRIP
+RT
 $Comp
 L Relay_Line_Sense:TELTONE_M949-1 K2
 U 1 1 63F0A8BB
@@ -695,30 +577,26 @@ F 3 "" H 1400 4540 50  0001 C CNN
 	1    1400 4540
 	0    1    -1   0   
 $EndComp
-Text GLabel 5810 5670 0    50   Input ~ 0
-LINE1A
-Text GLabel 5810 6070 0    50   Input ~ 0
-LINE1B
 $Comp
 L Diode:1N4148 D?
 U 1 1 649ADA22
-P 6940 5770
-F 0 "D?" H 6940 5986 50  0000 C CNN
-F 1 "1N4148" H 6940 5895 50  0000 C CNN
-F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 6940 5595 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 6940 5770 50  0001 C CNN
-	1    6940 5770
+P 7140 5770
+F 0 "D?" H 7140 5986 50  0000 C CNN
+F 1 "1N4148" H 7140 5895 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 7140 5595 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 7140 5770 50  0001 C CNN
+	1    7140 5770
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Diode:1N4148 D?
 U 1 1 649AE825
-P 7200 5770
-F 0 "D?" H 7200 5990 50  0000 C CNN
-F 1 "1N4148" H 7200 5900 50  0000 C CNN
-F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 7200 5595 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 7200 5770 50  0001 C CNN
-	1    7200 5770
+P 7400 5770
+F 0 "D?" H 7400 5990 50  0000 C CNN
+F 1 "1N4148" H 7400 5900 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 7400 5595 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 7400 5770 50  0001 C CNN
+	1    7400 5770
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -749,10 +627,8 @@ F 3 "" H 11100 8310 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2160 5440 2030 5440
-Text GLabel 2160 5440 2    50   Input ~ 0
-RING_BUS_R
 Text GLabel 10090 4960 0    50   Input ~ 0
-RING_BUS_R
+RING_BUS(R)
 Wire Wire Line
 	10090 4960 10320 4960
 Text Notes 720  1500 0    500  ~ 0
@@ -814,17 +690,6 @@ F 3 "" H 13940 6390 50  0001 C CNN
 $EndComp
 $Comp
 L power:+12V #PWR?
-U 1 1 63F37E0E
-P 5710 6620
-F 0 "#PWR?" H 5710 6470 50  0001 C CNN
-F 1 "+12V" V 5725 6748 50  0000 L CNN
-F 2 "" H 5710 6620 50  0001 C CNN
-F 3 "" H 5710 6620 50  0001 C CNN
-	1    5710 6620
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+12V #PWR?
 U 1 1 63F3D7B0
 P 11280 2200
 F 0 "#PWR?" H 11280 2050 50  0001 C CNN
@@ -856,90 +721,28 @@ F 3 "~" H 8530 5770 50  0001 C CNN
 	1    8530 5770
 	-1   0    0    -1  
 $EndComp
-$Comp
-L Device:C C?
-U 1 1 63F414E1
-P 7820 5970
-F 0 "C?" V 7568 5970 50  0000 C CNN
-F 1 "0.1uF" V 7659 5970 50  0000 C CNN
-F 2 "" H 7858 5820 50  0001 C CNN
-F 3 "~" H 7820 5970 50  0001 C CNN
-	1    7820 5970
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 63F42FC6
-P 7820 5570
-F 0 "C?" V 7568 5570 50  0000 C CNN
-F 1 "0.1uF" V 7659 5570 50  0000 C CNN
-F 2 "" H 7858 5420 50  0001 C CNN
-F 3 "~" H 7820 5570 50  0001 C CNN
-	1    7820 5570
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	7970 5570 8230 5570
-Wire Wire Line
-	7970 5970 8230 5970
 Text Notes 13430 5430 0    50   ~ 0
 TIP(A)
 Text Notes 13380 5960 0    50   ~ 0
 RING(B)
 Wire Wire Line
-	7200 5620 7200 5570
+	7400 5620 7400 5570
 Wire Wire Line
-	7200 5920 7200 5970
+	7400 5920 7400 5970
 Wire Wire Line
-	6940 5620 6940 5570
+	7140 5620 7140 5570
 Wire Wire Line
-	6940 5920 6940 5970
+	7140 5920 7140 5970
 Wire Wire Line
 	8830 5570 9130 5570
 Wire Wire Line
 	8830 5970 9130 5970
-Connection ~ 7200 5570
-Wire Wire Line
-	7200 5570 7670 5570
-Connection ~ 7200 5970
-Wire Wire Line
-	7200 5970 7670 5970
-Connection ~ 6940 5570
-Wire Wire Line
-	6940 5570 7200 5570
-Connection ~ 6940 5970
-Wire Wire Line
-	6940 5970 7200 5970
-Wire Wire Line
-	6590 5570 6750 5570
-Wire Wire Line
-	6590 5970 6740 5970
-Text GLabel 5810 5470 0    50   Input ~ 0
-LINE2A
-Text GLabel 5810 5870 0    50   Input ~ 0
-LINE2B
-Wire Wire Line
-	5990 5470 5810 5470
-Wire Wire Line
-	5810 5670 5990 5670
-Wire Wire Line
-	5810 5870 5990 5870
-Wire Wire Line
-	5810 6070 5990 6070
 Text GLabel 2160 4640 2    50   Input ~ 0
-LINE1A
+VOICE_LINE(T)
 Text GLabel 2160 4740 2    50   Input ~ 0
-LINE1B
-Text GLabel 2160 4840 2    50   Input ~ 0
-LINE2A
-Text GLabel 2160 4940 2    50   Input ~ 0
-LINE2B
-Wire Wire Line
-	2160 4840 2030 4840
+VOICE_LINE(R)
 Wire Wire Line
 	2160 4640 2030 4640
-Wire Wire Line
-	2160 4940 2030 4940
 Wire Wire Line
 	2160 4740 2030 4740
 $Comp
@@ -966,21 +769,6 @@ F 3 "" H 1400 4040 50  0001 C CNN
 	1    1400 4040
 	0    -1   1    0   
 $EndComp
-$Comp
-L Connector:TestPoint TP4
-U 1 1 640756EE
-P 6740 6030
-F 0 "TP4" H 6670 6250 50  0000 L CNN
-F 1 "TESTPOINT(B)" H 6800 6170 50  0000 L CNN
-F 2 "" H 6940 6030 50  0001 C CNN
-F 3 "~" H 6940 6030 50  0001 C CNN
-	1    6740 6030
-	1    0    0    1   
-$EndComp
-Wire Wire Line
-	6740 6030 6740 5970
-Wire Wire Line
-	6750 5510 6750 5570
 $Comp
 L Transistor_BJT:2N3904 Q?
 U 1 1 6409F3B9
@@ -1010,69 +798,6 @@ $EndComp
 Wire Wire Line
 	12570 8330 12790 8330
 NoConn ~ 2030 5040
-Text Notes 7880 6770 0    50   ~ 0
-*ADD RESISTORS INLINE?\n*ISOLATION TRANSFORMER \nBEFORE OR AFTER VOICE RELAY?
-Connection ~ 6750 5570
-Wire Wire Line
-	6750 5570 6940 5570
-Connection ~ 6740 5970
-Wire Wire Line
-	6740 5970 6940 5970
-$Comp
-L Connector:TestPoint TP3
-U 1 1 6407C0D6
-P 6750 5510
-F 0 "TP3" H 6680 5730 50  0000 L CNN
-F 1 "TESTPOINT(A)" H 6800 5640 50  0000 L CNN
-F 2 "" H 6950 5510 50  0001 C CNN
-F 3 "~" H 6950 5510 50  0001 C CNN
-	1    6750 5510
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP1
-U 1 1 641023C3
-P 880 10030
-F 0 "TP1" H 938 10148 50  0000 L CNN
-F 1 "GND" H 938 10057 50  0000 L CNN
-F 2 "" H 1080 10030 50  0001 C CNN
-F 3 "~" H 1080 10030 50  0001 C CNN
-	1    880  10030
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP2
-U 1 1 64102B36
-P 1210 10030
-F 0 "TP2" H 1268 10148 50  0000 L CNN
-F 1 "+12V" H 1268 10057 50  0000 L CNN
-F 2 "" H 1410 10030 50  0001 C CNN
-F 3 "~" H 1410 10030 50  0001 C CNN
-	1    1210 10030
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 641036C0
-P 880 10030
-F 0 "#PWR?" H 880 9780 50  0001 C CNN
-F 1 "GND" H 885 9857 50  0000 C CNN
-F 2 "" H 880 10030 50  0001 C CNN
-F 3 "" H 880 10030 50  0001 C CNN
-	1    880  10030
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+12V #PWR?
-U 1 1 64103B49
-P 1210 10030
-F 0 "#PWR?" H 1210 9880 50  0001 C CNN
-F 1 "+12V" H 1225 10203 50  0000 C CNN
-F 2 "" H 1210 10030 50  0001 C CNN
-F 3 "" H 1210 10030 50  0001 C CNN
-	1    1210 10030
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	1400 5340 1530 5340
 Wire Wire Line
@@ -1081,8 +806,6 @@ Wire Wire Line
 	1530 5240 1400 5240
 Wire Wire Line
 	1400 5440 1530 5440
-Text GLabel 1400 5440 0    50   Input ~ 0
-RING_BUS_R
 $Comp
 L power:-48V #PWR?
 U 1 1 6410BC48
@@ -1094,8 +817,6 @@ F 3 "" H 1400 5240 50  0001 C CNN
 	1    1400 5240
 	0    -1   1    0   
 $EndComp
-Text GLabel 1400 5340 0    50   Input ~ 0
-RING_BUS_T
 NoConn ~ 1530 5040
 NoConn ~ 1530 4940
 NoConn ~ 1530 4840
@@ -1141,17 +862,6 @@ $EndComp
 Text Notes 6540 10390 0    100  ~ 0
 ALL RESISTORS SHOULD BE 1/2 WATT UNLESS OTHERWISE NOTED
 $Comp
-L Device:C C?
-U 1 1 63F6C9DE
-P 8340 4530
-F 0 "C?" H 8455 4576 50  0000 L CNN
-F 1 "0.047uF" H 8455 4485 50  0000 L CNN
-F 2 "" H 8378 4380 50  0001 C CNN
-F 3 "~" H 8340 4530 50  0001 C CNN
-	1    8340 4530
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:CP1 C?
 U 1 1 63FD1448
 P 2650 6330
@@ -1196,17 +906,6 @@ F 3 "~" H 1890 6330 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:-BATT #PWR?
-U 1 1 63FD995E
-P 2940 6910
-F 0 "#PWR?" H 2940 6760 50  0001 C CNN
-F 1 "-BATT" H 2955 7085 50  0000 C CNN
-F 2 "" H 2940 6910 50  0001 C CNN
-F 3 "" H 2940 6910 50  0001 C CNN
-	1    2940 6910
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+12V #PWR?
 U 1 1 63FDA3F7
 P 1890 6180
@@ -1228,15 +927,35 @@ F 3 "" H 1890 6480 50  0001 C CNN
 	1    1890 6480
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+BATT #PWR?
-U 1 1 63FE36F9
-P 3330 6910
-F 0 "#PWR?" H 3330 6760 50  0001 C CNN
-F 1 "+BATT" H 3345 7085 50  0000 C CNN
-F 2 "" H 3330 6910 50  0001 C CNN
-F 3 "" H 3330 6910 50  0001 C CNN
-	1    3330 6910
-	1    0    0    -1  
-$EndComp
+NoConn ~ 2030 4940
+NoConn ~ 2030 4840
+NoConn ~ 2030 4140
+Wire Wire Line
+	6590 5570 7140 5570
+Wire Wire Line
+	6590 5970 7140 5970
+Text GLabel 6590 5570 0    50   Input ~ 0
+VOICE_LINE(T)
+Text GLabel 6590 5970 0    50   Input ~ 0
+VOICE_LINE(R)
+Connection ~ 7140 5570
+Wire Wire Line
+	7140 5570 7400 5570
+Connection ~ 7140 5970
+Wire Wire Line
+	7140 5970 7400 5970
+Connection ~ 7400 5570
+Connection ~ 7400 5970
+Wire Wire Line
+	7400 5570 8230 5570
+Wire Wire Line
+	7400 5970 8230 5970
+Text GLabel 1400 5440 0    50   Input ~ 0
+RING_BUS(R)
+Text GLabel 2160 5440 2    50   Input ~ 0
+RING_BUS(R)
+Text GLabel 1400 5340 0    50   Input ~ 0
+RING_BUS(T)
+Text GLabel 2160 5340 2    50   Input ~ 0
+RING_BUS(T)
 $EndSCHEMATC
