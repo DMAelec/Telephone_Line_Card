@@ -1,0 +1,13 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Silvertel_AG1110
+D Silvertel AG1110
+K SLIC Module
+$ENDCMP
+#
+$CMP Silvertel_AG1171
+D Silvertel AG 1171, Alias:  KS0835F
+K SLIC MODULE
+$ENDCMP
+#
+#End Doc Library

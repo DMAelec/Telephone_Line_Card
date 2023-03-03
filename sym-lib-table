@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name Relay_Line_Sense)(type Legacy)(uri ${KIPRJMOD}/lib/Relay_Line_Sense.lib)(options "")(descr ""))
+  (lib (name SLIC_Module)(type Legacy)(uri ${KIPRJMOD}/lib/SLIC_Module.lib)(options "")(descr ""))
 )
